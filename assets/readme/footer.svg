@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" width="100%" role="img" aria-labelledby="ftTitle ftDesc">
+  <title id="ftTitle">页脚 — 作者签名与技术栈</title>
+  <desc id="ftDesc">README 页脚签名块。左侧标注作者 liem、技术栈 TensorFlow 2.21 与 Kaggle House Prices 数据集来源;右侧为 README MADE WITH 签名标签,链接至 beautify-github-readme skill;底部为 MIT License 注解。</desc>
+  <defs>
+    <style>
+      .bg { fill: #FAFAF7; }
+      .ink { fill: #1A1A1A; }
+      .mute { fill: #8B8680; }
+      .primary { fill: #2E5C8A; }
+      .accent { fill: #C44536; }
+      .label-mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+      .label-sans { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      .label-serif { font-family: Georgia, "Times New Roman", serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1200" height="100" rx="16" ry="16"/>
+
+  <!-- Top divider line -->
+  <line x1="48" y1="20" x2="1152" y2="20" stroke="#E5E2DC" stroke-width="1"/>
+
+  <!-- Left: author + tech stack -->
+  <g transform="translate(48 40)">
+    <text class="label-mono mute" x="0" y="0" font-size="11" letter-spacing="1.5">AUTHOR · STACK</text>
+    <text class="label-sans ink" x="0" y="22" font-size="14" font-weight="600">作者 liem</text>
+    <text class="label-mono mute" x="0" y="42" font-size="11">TensorFlow 2.21 · Keras · scikit-learn 1.8 · Pandas · NumPy · Matplotlib</text>
+  </g>
+
+  <!-- Middle: data source -->
+  <g transform="translate(620 40)">
+    <text class="label-mono mute" x="0" y="0" font-size="11" letter-spacing="1.5">DATA SOURCE</text>
+    <text class="label-sans ink" x="0" y="22" font-size="14" font-weight="600">Kaggle House Prices</text>
+    <text class="label-mono mute" x="0" y="42" font-size="11">1460 行 × 81 列 · 端到端回归实验数据集</text>
+  </g>
+
+  <!-- Right: README MADE WITH signature badge -->
+  <g transform="translate(980 40)">
+    <rect x="0" y="0" width="172" height="46" fill="#FAFAF7" stroke="#2E5C8A" stroke-width="1" rx="6" ry="6"/>
+    <text class="label-mono primary" x="86" y="18" font-size="9" text-anchor="middle" letter-spacing="1.5" font-weight="600">README MADE WITH</text>
+    <line x1="60" y1="24" x2="112" y2="24" stroke="#C44536" stroke-width="1.2"/>
+    <text class="label-sans ink" x="86" y="38" font-size="11" text-anchor="middle" font-weight="600">beautify-github-readme</text>
+  </g>
+
+  <!-- Bottom: license -->
+  <line x1="48" y1="78" x2="1152" y2="78" stroke="#E5E2DC" stroke-width="1"/>
+  <text class="label-mono mute" x="48" y="92" font-size="10">MIT License · 仅供学习与研究用途 · 仓库作者保留所有权利</text>
+</svg>

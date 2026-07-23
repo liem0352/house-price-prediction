@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="100%" role="img" aria-labelledby="evalTitle evalDesc">
   <title id="evalTitle">评估指标横幅 — MSE / RMSE / R²</title>
-  <desc id="evalDesc">三个回归评估指标横向排列:MSE、RMSE、R²,各附简要说明与优化方向。MSE 与 RMSE 用砖红强调(误差类指标),R² 用深蓝强调(拟合优度指标)。</desc>
+  <desc id="evalDesc">三个回归评估指标横向排列:MSE、RMSE、R²。MSE 与 RMSE 用砖红色条标记(误差类指标,越小越好),R² 用深蓝色条标记(拟合优度,越接近 1 越好)。底部附理想回归模型的判据注解。</desc>
   <defs>
     <style>
       .bg { fill: #FAFAF7; }
@@ -21,26 +21,30 @@
   <text class="label-mono mute" x="48" y="30" font-size="11" letter-spacing="1.5">EVALUATION · REGRESSION METRICS</text>
 
   <!-- Col 1: MSE -->
-  <g transform="translate(48 52)">
-    <rect x="0" y="0" width="3" height="64" fill="#C44536"/>
-    <text class="label-serif ink" x="18" y="26" font-size="26" font-weight="600">MSE</text>
-    <text class="label-mono mute" x="18" y="46" font-size="11">越小越好</text>
-    <text class="label-sans mute" x="18" y="64" font-size="12">Mean Squared Error · 放大较大预测误差</text>
+  <g transform="translate(48 50)">
+    <rect x="0" y="0" width="3" height="60" fill="#C44536"/>
+    <text class="label-serif ink" x="18" y="24" font-size="26" font-weight="600">MSE</text>
+    <text class="label-mono accent" x="18" y="42" font-size="11" font-weight="600">↓ 越小越好</text>
+    <text class="label-sans mute" x="18" y="60" font-size="12">Mean Squared Error · 放大较大预测误差</text>
   </g>
 
   <!-- Col 2: RMSE -->
-  <g transform="translate(440 52)">
-    <rect x="0" y="0" width="3" height="64" fill="#C44536"/>
-    <text class="label-serif ink" x="18" y="26" font-size="26" font-weight="600">RMSE</text>
-    <text class="label-mono mute" x="18" y="46" font-size="11">越小越好</text>
-    <text class="label-sans mute" x="18" y="64" font-size="12">Root MSE · 与房价同量纲,便于业务解读</text>
+  <g transform="translate(440 50)">
+    <rect x="0" y="0" width="3" height="60" fill="#C44536"/>
+    <text class="label-serif ink" x="18" y="24" font-size="26" font-weight="600">RMSE</text>
+    <text class="label-mono accent" x="18" y="42" font-size="11" font-weight="600">↓ 越小越好</text>
+    <text class="label-sans mute" x="18" y="60" font-size="12">Root MSE · 与房价同量纲,便于业务解读</text>
   </g>
 
   <!-- Col 3: R² -->
-  <g transform="translate(832 52)">
-    <rect x="0" y="0" width="3" height="64" fill="#2E5C8A"/>
-    <text class="label-serif ink" x="18" y="26" font-size="26" font-weight="600">R²</text>
-    <text class="label-mono mute" x="18" y="46" font-size="11">越接近 1 越好</text>
-    <text class="label-sans mute" x="18" y="64" font-size="12">Coefficient of Determination · 解释力占比</text>
+  <g transform="translate(832 50)">
+    <rect x="0" y="0" width="3" height="60" fill="#2E5C8A"/>
+    <text class="label-serif ink" x="18" y="24" font-size="26" font-weight="600">R²</text>
+    <text class="label-mono primary" x="18" y="42" font-size="11" font-weight="600">→ 越接近 1 越好</text>
+    <text class="label-sans mute" x="18" y="60" font-size="12">Coefficient of Determination · 解释力占比</text>
   </g>
+
+  <!-- Bottom annotation -->
+  <line x1="48" y1="120" x2="1152" y2="120" stroke="#E5E2DC" stroke-width="1"/>
+  <text class="label-mono mute" x="48" y="134" font-size="11">理想回归模型:低 RMSE · R² 接近 1 · 残差近似零均值</text>
 </svg>

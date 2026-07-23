@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" role="img" aria-labelledby="mpTitle mpDesc">
+  <title id="mpTitle">模型流水线 — 从原始 CSV 到可推理模型</title>
+  <desc id="mpDesc">五步横向流水线:数据加载(1460×81 CSV)、特征工程(缺失值填充 · 类别编码 · 数值缩放)、训练(Dense+Dropout · 早停)、评估(MSE/RMSE/R² · 四张图表)、预测(保存 house_price_model.keras)。前四步用深蓝,最后产物步用砖红强调。</desc>
+  <defs>
+    <style>
+      .bg { fill: #FAFAF7; }
+      .ink { fill: #1A1A1A; }
+      .mute { fill: #8B8680; }
+      .primary { fill: #2E5C8A; }
+      .accent { fill: #C44536; }
+      .frame { fill: none; stroke: #E5E2DC; stroke-width: 1; }
+      .card-frame { fill: #FFFFFF; stroke: #E5E2DC; stroke-width: 1; }
+      .arrow-line { stroke: #8B8680; stroke-width: 1.5; fill: none; }
+      .label-mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+      .label-sans { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L6,4 L0,8 z" fill="#8B8680"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1200" height="320" rx="20" ry="20"/>
+
+  <!-- Header -->
+  <g transform="translate(56 38)">
+    <text class="label-mono mute" x="0" y="0" font-size="11" letter-spacing="1.5">MODEL PIPELINE · END-TO-END</text>
+    <text class="label-sans ink" x="0" y="28" font-size="22" font-weight="700">从原始 CSV 到可推理模型</text>
+    <text class="label-sans mute" x="0" y="50" font-size="13">五个阶段构成端到端实验链路,每一步产出可复用中间产物</text>
+  </g>
+
+  <!-- Pipeline: 5 cards + 4 arrows. Layout: 56..1144 = 1088 wide -->
+  <!-- Card width 180, gap 47 (arrow zone). 5*180 + 4*47 = 1088 -->
+  <g transform="translate(56 120)">
+    <!-- Arrow lines drawn first so cards overlay them -->
+    <line class="arrow-line" x1="180" y1="80" x2="218" y2="80" marker-end="url(#arrowhead)"/>
+    <line class="arrow-line" x1="407" y1="80" x2="445" y2="80" marker-end="url(#arrowhead)"/>
+    <line class="arrow-line" x1="634" y1="80" x2="672" y2="80" marker-end="url(#arrowhead)"/>
+    <line class="arrow-line" x1="861" y1="80" x2="899" y2="80" marker-end="url(#arrowhead)"/>
+
+    <!-- Card 1: 数据加载 -->
+    <g transform="translate(0 0)">
+      <rect class="card-frame" x="0" y="0" width="180" height="160" rx="8" ry="8"/>
+      <rect x="0" y="0" width="180" height="4" fill="#2E5C8A" rx="2" ry="2"/>
+      <text class="label-mono primary" x="14" y="26" font-size="11" font-weight="600" letter-spacing="1">STEP 01</text>
+      <text class="label-sans ink" x="14" y="56" font-size="17" font-weight="700">数据加载</text>
+      <line x1="14" y1="68" x2="40" y2="68" stroke="#2E5C8A" stroke-width="2"/>
+      <text class="label-sans mute" x="14" y="92" font-size="12">读取 Kaggle House Prices</text>
+      <text class="label-mono mute" x="14" y="112" font-size="11">house_prices.csv</text>
+      <text class="label-mono mute" x="14" y="132" font-size="11">1460 行 × 81 列</text>
+      <text class="label-mono mute" x="14" y="150" font-size="10">Pandas DataFrame</text>
+    </g>
+
+    <!-- Card 2: 特征工程 -->
+    <g transform="translate(227 0)">
+      <rect class="card-frame" x="0" y="0" width="180" height="160" rx="8" ry="8"/>
+      <rect x="0" y="0" width="180" height="4" fill="#2E5C8A" rx="2" ry="2"/>
+      <text class="label-mono primary" x="14" y="26" font-size="11" font-weight="600" letter-spacing="1">STEP 02</text>
+      <text class="label-sans ink" x="14" y="56" font-size="17" font-weight="700">特征工程</text>
+      <line x1="14" y1="68" x2="40" y2="68" stroke="#2E5C8A" stroke-width="2"/>
+      <text class="label-sans mute" x="14" y="92" font-size="12">缺失值填充</text>
+      <text class="label-sans mute" x="14" y="110" font-size="12">类别变量编码</text>
+      <text class="label-sans mute" x="14" y="128" font-size="12">数值标准化缩放</text>
+      <text class="label-mono mute" x="14" y="150" font-size="10">sklearn · StandardScaler</text>
+    </g>
+
+    <!-- Card 3: 训练 -->
+    <g transform="translate(454 0)">
+      <rect class="card-frame" x="0" y="0" width="180" height="160" rx="8" ry="8"/>
+      <rect x="0" y="0" width="180" height="4" fill="#2E5C8A" rx="2" ry="2"/>
+      <text class="label-mono primary" x="14" y="26" font-size="11" font-weight="600" letter-spacing="1">STEP 03</text>
+      <text class="label-sans ink" x="14" y="56" font-size="17" font-weight="700">模型训练</text>
+      <line x1="14" y1="68" x2="40" y2="68" stroke="#2E5C8A" stroke-width="2"/>
+      <text class="label-sans mute" x="14" y="92" font-size="12">Dense × N 隐藏层</text>
+      <text class="label-sans mute" x="14" y="110" font-size="12">Dropout 随机失活</text>
+      <text class="label-sans mute" x="14" y="128" font-size="12">EarlyStopping 早停</text>
+      <text class="label-mono mute" x="14" y="150" font-size="10">Keras · compile + fit</text>
+    </g>
+
+    <!-- Card 4: 评估 -->
+    <g transform="translate(681 0)">
+      <rect class="card-frame" x="0" y="0" width="180" height="160" rx="8" ry="8"/>
+      <rect x="0" y="0" width="180" height="4" fill="#2E5C8A" rx="2" ry="2"/>
+      <text class="label-mono primary" x="14" y="26" font-size="11" font-weight="600" letter-spacing="1">STEP 04</text>
+      <text class="label-sans ink" x="14" y="56" font-size="17" font-weight="700">评估可视化</text>
+      <line x1="14" y1="68" x2="40" y2="68" stroke="#2E5C8A" stroke-width="2"/>
+      <text class="label-sans mute" x="14" y="92" font-size="12">MSE / RMSE / R²</text>
+      <text class="label-sans mute" x="14" y="110" font-size="12">训练曲线 + 散点</text>
+      <text class="label-sans mute" x="14" y="128" font-size="12">残差 + 标签分布</text>
+      <text class="label-mono mute" x="14" y="150" font-size="10">Matplotlib · metrics.json</text>
+    </g>
+
+    <!-- Card 5: 预测(产物步,砖红强调) -->
+    <g transform="translate(908 0)">
+      <rect x="0" y="0" width="180" height="160" rx="8" ry="8" fill="#FFFFFF" stroke="#C44536" stroke-width="1.2"/>
+      <rect x="0" y="0" width="180" height="4" fill="#C44536" rx="2" ry="2"/>
+      <text class="label-mono accent" x="14" y="26" font-size="11" font-weight="600" letter-spacing="1">STEP 05 · ARTIFACT</text>
+      <text class="label-sans ink" x="14" y="56" font-size="17" font-weight="700">保存与推理</text>
+      <line x1="14" y1="68" x2="40" y2="68" stroke="#C44536" stroke-width="2"/>
+      <text class="label-sans mute" x="14" y="92" font-size="12">保存训练后模型</text>
+      <text class="label-mono accent" x="14" y="114" font-size="11" font-weight="600">house_price_model.keras</text>
+      <text class="label-sans mute" x="14" y="134" font-size="12">可直接加载推理</text>
+      <text class="label-mono mute" x="14" y="150" font-size="10">keras.models.save_model</text>
+    </g>
+  </g>
+
+  <!-- Bottom note -->
+  <text class="label-mono mute" x="56" y="308" font-size="10">每一步产物在 figures/ 与 metrics.json 中可追溯 · notebook 单元格顺序执行即完整链路</text>
+</svg>

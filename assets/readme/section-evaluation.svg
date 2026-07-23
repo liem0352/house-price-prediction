@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="100%" role="img" aria-labelledby="evalTitle evalDesc">
+  <title id="evalTitle">评估指标横幅 — MSE / RMSE / R²</title>
+  <desc id="evalDesc">三个回归评估指标横向排列:MSE、RMSE、R²,各附简要说明与优化方向。MSE 与 RMSE 用砖红强调(误差类指标),R² 用深蓝强调(拟合优度指标)。</desc>
+  <defs>
+    <style>
+      .bg { fill: #FAFAF7; }
+      .ink { fill: #1A1A1A; }
+      .mute { fill: #8B8680; }
+      .primary { fill: #2E5C8A; }
+      .accent { fill: #C44536; }
+      .label-mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+      .label-sans { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      .label-serif { font-family: Georgia, "Times New Roman", serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1200" height="140" rx="16" ry="16"/>
+
+  <!-- Top-left section label -->
+  <text class="label-mono mute" x="48" y="30" font-size="11" letter-spacing="1.5">EVALUATION · REGRESSION METRICS</text>
+
+  <!-- Col 1: MSE -->
+  <g transform="translate(48 52)">
+    <rect x="0" y="0" width="3" height="64" fill="#C44536"/>
+    <text class="label-serif ink" x="18" y="26" font-size="26" font-weight="600">MSE</text>
+    <text class="label-mono mute" x="18" y="46" font-size="11">越小越好</text>
+    <text class="label-sans mute" x="18" y="64" font-size="12">Mean Squared Error · 放大较大预测误差</text>
+  </g>
+
+  <!-- Col 2: RMSE -->
+  <g transform="translate(440 52)">
+    <rect x="0" y="0" width="3" height="64" fill="#C44536"/>
+    <text class="label-serif ink" x="18" y="26" font-size="26" font-weight="600">RMSE</text>
+    <text class="label-mono mute" x="18" y="46" font-size="11">越小越好</text>
+    <text class="label-sans mute" x="18" y="64" font-size="12">Root MSE · 与房价同量纲,便于业务解读</text>
+  </g>
+
+  <!-- Col 3: R² -->
+  <g transform="translate(832 52)">
+    <rect x="0" y="0" width="3" height="64" fill="#2E5C8A"/>
+    <text class="label-serif ink" x="18" y="26" font-size="26" font-weight="600">R²</text>
+    <text class="label-mono mute" x="18" y="46" font-size="11">越接近 1 越好</text>
+    <text class="label-sans mute" x="18" y="64" font-size="12">Coefficient of Determination · 解释力占比</text>
+  </g>
+</svg>
